@@ -22,7 +22,7 @@ public class Blog {
     private Date pubDate;
 
     @ManyToOne
-    @JoinColumn(name = "UserId")
+    @JoinColumn
     private User user;
 
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)

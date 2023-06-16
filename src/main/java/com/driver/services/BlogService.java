@@ -32,10 +32,7 @@ public class BlogService {
 
         Optional<User> userOpt = userRepository1.findById(userId);
         User user = userOpt.get();
-
-        List<Blog> blogs = new ArrayList<>();
-        blogs.add(blog);
-        user.setBlogList(blogs);
+        user.getBlogList().add(blog);
 
         userRepository1.save(user);
         return blog;

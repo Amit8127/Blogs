@@ -16,7 +16,7 @@ public class Image {
     private String dimensions;
 
     @ManyToOne
-    @JoinColumn(name = "BlogId")
+    @JoinColumn
     private Blog blog;
 
     public Integer getId() {
