@@ -51,6 +51,6 @@ public class ImageService {
         int screenH = Integer.parseInt(screenSize[0]);
         int screenW = Integer.parseInt(screenSize[1]);
 
-        return (screenH/imageH)*(screenW/imageH);
+        return (screenH/imageH)*(screenW/imageW);
     }
 }
