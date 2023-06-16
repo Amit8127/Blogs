@@ -38,8 +38,7 @@ public class ImageService {
 
     public int countImagesInScreen(Integer id, String screenDimensions) {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
-        Optional<Blog> blogOpt = blogRepository2.findById(id);
-        Blog blog = blogOpt.get();
+        Blog blog = blogRepository2.findById(id).get();
         int countImages = 0;
         for(Image image : blog.getImageList()) {
             if(image.getDimensions().equals(screenDimensions)) {

@@ -30,8 +30,7 @@ public class BlogService {
         blog.setPubDate(new Date());
         blog = blogRepository1.save(blog);
 
-        Optional<User> userOpt = userRepository1.findById(userId);
-        User user = userOpt.get();
+        User user = userRepository1.findById(userId).get();
         blog.setUser(user);
         user.getBlogList().add(blog);
 
@@ -41,8 +40,7 @@ public class BlogService {
 
     public void deleteBlog(int blogId){
         //delete blog and corresponding images
-        Optional<Blog> blogOpt = blogRepository1.findById(blogId);
-        Blog blog = blogOpt.get();
+        Blog blog = blogRepository1.findById(blogId).get();
 
         blog.getImageList().clear();
         blogRepository1.delete(blog);

@@ -29,8 +29,7 @@ public class UserService {
     }
 
     public User updateUser(Integer id, String password){
-        Optional<User> userOpt = userRepository3.findById(id);
-        User user = userOpt.get();
+        User user = userRepository3.findById(id).get();
         user.setPassword(password);
         userRepository3.save(user);
         return user;
