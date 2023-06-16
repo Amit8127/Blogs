@@ -18,10 +18,10 @@ public class User {
     private String password;
 
     @Column(name = "FirstName")
-    private String firstName = "test";
+    private String firstName;
 
     @Column(name = "LastName")
-    private String lastName = "test";
+    private String lastName;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Blog> blogList = new ArrayList<>();
