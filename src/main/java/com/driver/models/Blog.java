@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Entity
+@Table
 public class Blog {
 
     @Column(name = "Id")

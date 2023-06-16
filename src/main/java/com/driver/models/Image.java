@@ -2,6 +2,8 @@ package com.driver.models;
 
 import javax.persistence.*;
 
+@Entity
+@Table
 public class Image {
 
     @Column(name = "Id")
