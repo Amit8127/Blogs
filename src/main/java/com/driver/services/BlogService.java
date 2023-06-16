@@ -35,7 +35,7 @@ public class BlogService {
 
         List<Blog> blogs = new ArrayList<>();
         blogs.add(blog);
-        user.setBlogs(blogs);
+        user.setBlogList(blogs);
 
         userRepository1.save(user);
         return blog;
@@ -46,7 +46,7 @@ public class BlogService {
         Optional<Blog> blogOpt = blogRepository1.findById(blogId);
         Blog blog = blogOpt.get();
 
-        blog.getImages().clear();
+        blog.getImageList().clear();
         blogRepository1.delete(blog);
     }
 }

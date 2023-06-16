@@ -25,7 +25,7 @@ public class ImageService {
 
         Optional<Blog> blogOpt = blogRepository2.findById(blogId);
         Blog blog = blogOpt.get();
-        blog.getImages().add(image);
+        blog.getImageList().add(image);
 
         blogRepository2.save(blog);
         return image;
@@ -40,7 +40,7 @@ public class ImageService {
         Optional<Blog> blogOpt = blogRepository2.findById(id);
         Blog blog = blogOpt.get();
         int countImages = 0;
-        for(Image image : blog.getImages()) {
+        for(Image image : blog.getImageList()) {
             if(image.getDimensions().equals(screenDimensions)) {
                 countImages++;
             }
