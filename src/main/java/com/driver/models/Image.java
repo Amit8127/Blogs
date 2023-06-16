@@ -19,6 +19,16 @@ public class Image {
     @JoinColumn
     private Blog blog;
 
+    public Image() {
+    }
+
+    public Image(Integer id, String description, String dimensions, Blog blog) {
+        this.id = id;
+        this.description = description;
+        this.dimensions = dimensions;
+        this.blog = blog;
+    }
+
     public Integer getId() {
         return id;
     }

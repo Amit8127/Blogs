@@ -32,6 +32,7 @@ public class BlogService {
 
         Optional<User> userOpt = userRepository1.findById(userId);
         User user = userOpt.get();
+        blog.setUser(user);
         user.getBlogList().add(blog);
 
         userRepository1.save(user);

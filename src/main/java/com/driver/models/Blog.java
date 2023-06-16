@@ -1,5 +1,7 @@
 package com.driver.models;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,11 +21,22 @@ public class Blog {
     private String content;
 
     @Column(name = "PublishDate")
+    @CreationTimestamp
     private Date pubDate;
 
     @ManyToOne
     @JoinColumn
     private User user;
+
+    public Blog() {
+    }
+
+    public Blog(String title, String content, Date pubDate, User user) {
+        this.title = title;
+        this.content = content;
+        this.pubDate = pubDate;
+        this.user = user;
+    }
 
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
     private List<Image> imageList = new ArrayList<>();

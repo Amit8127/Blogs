@@ -26,6 +26,15 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Blog> blogList = new ArrayList<>();
 
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.firstName = "test";
+        this.lastName = "test";
+    }
 
     public Integer getId() {
         return id;
