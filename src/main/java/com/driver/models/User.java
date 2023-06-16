@@ -18,20 +18,14 @@ public class User {
     private String password;
 
     @Column(name = "FirstName")
-    private String firstName;
+    private String firstName = "test";
 
     @Column(name = "LastName")
-    private String lastName;
+    private String lastName = "test";
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Blog> blogs = new ArrayList<>();
+    private List<Blog> blogList = new ArrayList<>();
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-        this.firstName = "test";
-        this.lastName = "test";
-    }
 
     public Integer getId() {
         return id;
@@ -73,11 +67,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public List<Blog> getBlogs() {
-        return blogs;
+    public List<Blog> getBlogList() {
+        return blogList;
     }
 
-    public void setBlogs(List<Blog> blogs) {
-        this.blogs = blogs;
+    public void setBlogList(List<Blog> blogList) {
+        this.blogList = blogList;
     }
 }
