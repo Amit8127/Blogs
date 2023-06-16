@@ -21,12 +21,12 @@ public class ImageService {
         Image image = new Image();
         image.setDimensions(dimensions);
         image.setDescription(description);
-        image = imageRepository2.save(image);
 
-        Optional<Blog> blogOpt = blogRepository2.findById(blogId);
-        Blog blog = blogOpt.get();
+        Blog blog = blogRepository2.findById(blogId).get();
         image.setBlog(blog);
-        blog.getImageList().add(image);
+
+        List<Image> imageList = blog.getImageList();
+        imageList.add(image);
 
         blogRepository2.save(blog);
         return image;
